@@ -14,6 +14,13 @@ module.exports = (robot) ->
     msg.send msg.random [
       "お粗末！"
     ]
+
+  robot.hear /(おやすみ|お休み)/, (msg) ->
+    msg.send msg.random [
+      "ゆっくり休めよ！",
+      "もう寝ちゃうのか・・・",
+      "明日も頑張ろうな！"
+    ]
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
   #
