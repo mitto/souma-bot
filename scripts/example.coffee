@@ -9,10 +9,11 @@
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 module.exports = (robot) ->
-
   robot.hear /@souma/, (msg) ->
     msg.send msg.random [
-      "お粗末！"
+      "お上がりよ！",
+      "お粗末！",
+      "なんだよヽ(`Д´)ノ"
     ]
 
   robot.hear /(おやすみ|お休み)/, (msg) ->
@@ -21,6 +22,7 @@ module.exports = (robot) ->
       "もう寝ちゃうのか・・・",
       "明日も頑張ろうな！"
     ]
+
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
   #
