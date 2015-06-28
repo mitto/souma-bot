@@ -10,7 +10,7 @@
 
 module.exports = (robot) ->
 
-  robot.hear /@maki/, (msg) ->
+  robot.hear /@test/, (msg) ->
     msg.send msg.random [
         "それろ〜〜〜それろ〜〜〜",
         "ワイワイワイ",
