@@ -10,12 +10,9 @@
 
 module.exports = (robot) ->
 
-  robot.hear /@test/, (msg) ->
+  robot.hear /@studybot/, (msg) ->
     msg.send msg.random [
-        "それろ〜〜〜それろ〜〜〜",
-        "ワイワイワイ",
-        "やんやんっ♡♡",
-        "ないやん"        
+      "お粗末！"
     ]
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
