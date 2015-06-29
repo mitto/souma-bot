@@ -8,19 +8,30 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
+util = require 'util'
+
 module.exports = (robot) ->
-  robot.hear /@souma/, (msg) ->
-    msg.send msg.random [
-      "お上がりよ！",
-      "お粗末！",
-      "なんだよヽ(`Д´)ノ"
+  robot.respond /( *)$/, (msg) ->
+    msg.reply msg.random [
+      "なんだよヽ(`Д´)ノ",
+      "暇なのか(｀・д・´)"
     ]
 
-  robot.hear /(おやすみ|お休み)/, (msg) ->
-    msg.send msg.random [
+  robot.respond /今日は何の日？/, (msg) ->
+    date = new Date
+    msg.reply util.format("%d年%d月%d日だぞっ", date.getFullYear(), date.getMonth() + 1, date.getDate())
+
+  robot.hear /(お(やす|休)み)$/, (msg) ->
+    msg.reply msg.random [
       "ゆっくり休めよ！",
       "もう寝ちゃうのか・・・",
       "明日も頑張ろうな！"
+    ]
+
+  robot.hear /帰(る|ります)/, (msg) ->
+    msg.reply msg.random [
+      "気をつけて帰れよ！",
+      "おつかれさまっ！"
     ]
 
   # robot.hear /badger/i, (res) ->
