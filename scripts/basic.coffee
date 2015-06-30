@@ -21,6 +21,9 @@ module.exports = (robot) ->
     date = new Date
     msg.reply util.format("%d年%d月%d日だぞっ", date.getFullYear(), date.getMonth() + 1, date.getDate())
 
+  robot.respond /また明日な?/, (msg) ->
+    msg.reply "おうよ！"
+
   robot.hear /((お(やす|休)み(なさい)?)|(寝|ね)(る|よう))$/, (msg) ->
     msg.reply msg.random [
       "ゆっくり休めよ！",
