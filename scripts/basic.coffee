@@ -28,7 +28,7 @@ module.exports = (robot) ->
       "明日も頑張ろうな！"
     ]
 
-  robot.hear /帰(る|ります)/, (msg) ->
+  robot.hear /((か|け)え|帰)(ろう|る|ります)(。*)?$/, (msg) ->
     msg.reply msg.random [
       "気をつけて帰れよ！",
       "おつかれさまっ！"
