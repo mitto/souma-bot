@@ -28,6 +28,12 @@ module.exports = (robot) ->
       "どうってことねーよ(｀・ω・´)"
     ]
 
+  robot.respond /(聞|き)いて(くれ)?よ?/, (msg) ->
+    msg.reply msg.random [
+      "なんだなんだ、どうした？",
+      "おうよ！　じっくり聞いてやるから話してみ"
+    ]
+
   robot.respond /また(明日)?な?/, (msg) ->
     msg.reply "おうよ！"
 
