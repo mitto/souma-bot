@@ -37,7 +37,7 @@ module.exports = (robot) ->
   robot.respond /また(明日)?な?/, (msg) ->
     msg.reply "おうよ！"
 
-  robot.hear /((お(やす|休)み(なさい)?)|(寝|ね)(る|よう))$/, (msg) ->
+  robot.hear /^(?![@＠]).*((お(やす|休)み(なさい)?)|(寝|ね)(る|よう))$/, (msg) ->
     msg.reply msg.random [
       "ゆっくり休めよ！",
       "もう寝ちゃうのか・・・",
