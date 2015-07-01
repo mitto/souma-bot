@@ -12,43 +12,57 @@ util = require 'util'
 
 module.exports = (robot) ->
   robot.respond /( *)$/, (msg) ->
-    msg.reply msg.random [
-      "なんだよヽ(`Д´)ノ",
-      "暇なのか(｀・д・´)"
-    ]
+    setTimeout ->
+      msg.reply msg.random [
+        "なんだよヽ(`Д´)ノ",
+        "暇なのか(｀・д・´)"
+      ]
+    , 1000
 
   robot.respond /今日は何の日？/, (msg) ->
     date = new Date
-    msg.reply util.format("%d年%d月%d日だぞっ", date.getFullYear(), date.getMonth() + 1, date.getDate())
+    setTimeout ->
+      msg.reply util.format("%d年%d月%d日だぞっ", date.getFullYear(), date.getMonth() + 1, date.getDate())
+    , 1000
 
   robot.respond /ありがと(う|な|よ)?[!！]*/, (msg) ->
-    msg.reply msg.random [
-      "いいってことよ！",
-      "へっ、礼なんて・・・ 照れるじゃんかよ(´∀｀*)",
-      "どうってことねーよ(｀・ω・´)"
-    ]
+    setTimeout ->
+      msg.reply msg.random [
+        "いいってことよ！",
+        "へっ、礼なんて・・・ 照れるじゃんかよ(´∀｀*)",
+        "どうってことねーよ(｀・ω・´)"
+      ]
+    , 1000
 
   robot.respond /(聞|き)いて(くれ)?よ?/, (msg) ->
-    msg.reply msg.random [
-      "なんだなんだ、どうした？",
-      "おうよ！　じっくり聞いてやるから話してみ"
-    ]
+    setTimeout ->
+      msg.reply msg.random [
+        "なんだなんだ、どうした？",
+        "おうよ！　じっくり聞いてやるから話してみ"
+      ]
+    , 1000
 
   robot.respond /また(明日)?な?/, (msg) ->
-    msg.reply "おうよ！"
+    setTimeout ->
+      msg.reply "おうよ！"
+    , 1000
 
   robot.hear /^(?![@＠]).*((お(やす|休)み(なさい)?)|(寝|ね)(る|よう))$/, (msg) ->
-    msg.reply msg.random [
-      "ゆっくり休めよ！",
-      "もう寝ちゃうのか・・・",
-      "明日も頑張ろうな！"
-    ]
+    setTimeout ->
+      msg.reply msg.random [
+        "ゆっくり休めよ！",
+        "もう寝ちゃうのか・・・",
+        "明日も頑張ろうな！"
+      ]
+    , 1000
 
   robot.hear /((か|け)え|帰)(ろう|る|ります)(。*|[!！]*)?$/, (msg) ->
-    msg.reply msg.random [
-      "気をつけて帰れよ！",
-      "おつかれさまっ！"
-    ]
+    setTimeout ->
+      msg.reply msg.random [
+        "気をつけて帰れよ！",
+        "おつかれさまっ！"
+      ]
+    , 1000
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
