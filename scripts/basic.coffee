@@ -10,6 +10,8 @@
 
 util = require 'util'
 
+DELEYTIME = 1000
+
 module.exports = (robot) ->
   robot.respond /( *)$/, (msg) ->
     setTimeout ->
@@ -17,13 +19,13 @@ module.exports = (robot) ->
         "なんだよヽ(`Д´)ノ",
         "暇なのか(｀・д・´)"
       ]
-    , 1000
+    , DELEYTIME
 
   robot.respond /今日は何の日？/, (msg) ->
     date = new Date
     setTimeout ->
       msg.reply util.format("%d年%d月%d日だぞっ", date.getFullYear(), date.getMonth() + 1, date.getDate())
-    , 1000
+    , DELEYTIME
 
   robot.respond /ありがと(う|な|よ)?[!！]*/, (msg) ->
     setTimeout ->
@@ -32,7 +34,7 @@ module.exports = (robot) ->
         "へっ、礼なんて・・・ 照れるじゃんかよ(´∀｀*)",
         "どうってことねーよ(｀・ω・´)"
       ]
-    , 1000
+    , DELEYTIME
 
   robot.respond /(聞|き)いて(くれ)?よ?/, (msg) ->
     setTimeout ->
@@ -40,12 +42,12 @@ module.exports = (robot) ->
         "なんだなんだ、どうした？",
         "おうよ！　じっくり聞いてやるから話してみ"
       ]
-    , 1000
+    , DELEYTIME
 
   robot.respond /また(明日)?な?/, (msg) ->
     setTimeout ->
       msg.reply "おうよ！"
-    , 1000
+    , DELEYTIME
 
   robot.hear /^(?![@＠]).*((お(やす|休)み(なさい)?)|(寝|ね)(る|よう))$/, (msg) ->
     setTimeout ->
@@ -54,7 +56,7 @@ module.exports = (robot) ->
         "もう寝ちゃうのか・・・",
         "明日も頑張ろうな！"
       ]
-    , 1000
+    , DELEYTIME
 
   robot.hear /((か|け)え|帰)(ろう|る|ります)(。*|[!！]*)?$/, (msg) ->
     setTimeout ->
@@ -62,7 +64,7 @@ module.exports = (robot) ->
         "気をつけて帰れよ！",
         "おつかれさまっ！"
       ]
-    , 1000
+    , DELEYTIME
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
