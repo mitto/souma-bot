@@ -58,7 +58,7 @@ module.exports = (robot) ->
       ]
     , DELEYTIME
 
-  robot.hear /((か|け)え|帰)(ろう|る|ります)(。*|[!！]*)?$/, (msg) ->
+  robot.hear /((か|け)え|帰)(ろう|る(ぞい?)?|ります)(。*|(・*)?[!！]*|)?$/, (msg) ->
     setTimeout ->
       msg.reply msg.random [
         "気をつけて帰れよ！",
