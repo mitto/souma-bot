@@ -1,9 +1,9 @@
 {
   "name": "testbot",
-  "version": "0.31.2",
+  "version": "0.32.0",
   "private": true,
   "author": "mitto nagisa <mitto@mittostar.info>",
-  "description": "お勉強用Bot",
+  "description": "study souma bot",
   "dependencies": {
     "hubot": "^2.13.2",
     "hubot-diagnostics": "0.0.1",
