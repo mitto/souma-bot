@@ -49,7 +49,7 @@ module.exports = (robot) ->
       msg.reply "おうよ！"
     , DELEYTIME
 
-  robot.hear /^(?![@＠]).*((お(やす|休)み(なさい)?)|(寝|ね)(る|よう))([.。]*)?$/, (msg) ->
+  robot.hear /^(?![@＠]).*((お(やす|休)み(なさい)?)|(寝|ね)(る|よう?))([.。]*)?$/, (msg) ->
     setTimeout ->
       msg.reply msg.random [
         "ゆっくり休めよ！",
