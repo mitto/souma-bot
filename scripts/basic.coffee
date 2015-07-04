@@ -66,6 +66,11 @@ module.exports = (robot) ->
       ]
     , DELEYTIME
 
+  robot.respond /おかえり[!！]*/, (msg) ->
+    setTimeout ->
+      msg.reply "ただいま！"
+    , DELEYTIME
+
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
   #
