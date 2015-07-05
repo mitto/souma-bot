@@ -9,6 +9,7 @@
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 util = require 'util'
+moment = require "moment-timezone"
 
 DELEYTIME = 1000
 
@@ -28,9 +29,7 @@ module.exports = (robot) ->
     , DELEYTIME
 
   robot.hear /(いま|今)(なんじ|何時)([?？]*)?/, (msg) ->
-    setTimeout ->
-      msg.reply new Date
-    , DELEYTIME
+    msg.reply moment().tz("Asia/Tokyo").format("YYYY年MM月DD日 HH:mm:ss だぞっ")
 
 
   robot.respond /ありがと(う|な|よ)?[!！]*/, (msg) ->
