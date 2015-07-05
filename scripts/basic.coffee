@@ -27,6 +27,12 @@ module.exports = (robot) ->
       msg.reply util.format("%d年%d月%d日だぞっ", date.getFullYear(), date.getMonth() + 1, date.getDate())
     , DELEYTIME
 
+  robot.hear /(いま|今)(なんじ|何時)([?？]*)?/, (msg) ->
+    setTimeout ->
+      msg.reply new Date
+    , DELEYTIME
+
+
   robot.respond /ありがと(う|な|よ)?[!！]*/, (msg) ->
     setTimeout ->
       msg.reply msg.random [
