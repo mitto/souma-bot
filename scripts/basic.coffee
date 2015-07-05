@@ -22,12 +22,6 @@ module.exports = (robot) ->
       ]
     , DELEYTIME
 
-  robot.respond /今日は何の日？/, (msg) ->
-    date = new Date
-    setTimeout ->
-      msg.reply util.format("%d年%d月%d日だぞっ", date.getFullYear(), date.getMonth() + 1, date.getDate())
-    , DELEYTIME
-
   robot.hear /(いま|今)(なんじ|何時)([?？]*)?/, (msg) ->
     msg.reply moment().tz("Asia/Tokyo").format("YYYY年MM月DD日 HH:mm:ss だぞっ")
 
