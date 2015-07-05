@@ -71,7 +71,7 @@ module.exports = (robot) ->
       msg.reply "ただいま！"
     , DELEYTIME
 
-  robot.respond /おはよう?(ございます)?/, (msg) ->
+  robot.hear /おはよう?(ございます)?/, (msg) ->
     setTimeout ->
       now = moment()
       hour = now.hour()
