@@ -10,6 +10,7 @@
 
 util = require 'util'
 moment = require "moment-timezone"
+moment.tz.setDefault("Asia/Tokyo")
 
 DELEYTIME = 1000
 
@@ -68,6 +69,30 @@ module.exports = (robot) ->
   robot.respond /おかえり[!！]*/, (msg) ->
     setTimeout ->
       msg.reply "ただいま！"
+    , DELEYTIME
+
+  robot.respond /おはよう?(ございます)?/, (msg) ->
+    setTimeout ->
+      now = moment()
+      hour = now.hour()
+
+      if hour < 12
+        msg.reply msg.random [
+          "おはよ！",
+          "おう！　今日も一日頑張ろうな！"
+        ]
+      else if hour <= 18
+        msg.reply msg.random [
+          "こんな時間におはようなんて、お寝坊さんだな",
+          "もうお昼過ぎてんぞ！",
+          "疲れてたのか？"
+        ]
+      else
+        msg.reply msg.random [
+          "もう夜だぞ",
+          "業界人かよっｗ",
+          "これからお仕事なの・・か・・・？"
+        ]
     , DELEYTIME
 
   # robot.hear /badger/i, (res) ->
